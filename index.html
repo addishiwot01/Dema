@@ -114,21 +114,15 @@
         .icon-tiktok:hover { background-color: #333333; }
         .icon-youtube:hover { background-color: #CC0000; }
 
-        /* --- WATERMARK ANIMATION: Subtle Pulse/Vibration --- */
-        @keyframes pulseSubtle {
-            0%, 100% {
-                /* Start and end: Centered with base scale (160%) */
-                transform: scale(1.6) translate(0, 0); 
-            }
-            50% {
-                /* Mid-point: Subtle increase in size and slight shift to create 'vibration' */
-                transform: scale(1.65) translate(0.5px, 0.5px); 
-            }
+        /* --- WATERMARK ANIMATION: ROTATE (UPDATED TO 110% SCALE) --- */
+        @keyframes rotate {
+            0% { transform: scale(1.1) rotate(0deg); }
+            100% { transform: scale(1.1) rotate(360deg); } 
         }
         .animate-watermark {
-            /* Set common animation properties */
-            animation-name: pulseSubtle; 
-            animation-timing-function: ease-in-out; 
+            animation-name: rotate; 
+            animation-duration: 20s; 
+            animation-timing-function: linear; 
             animation-iteration-count: infinite; 
         }
 
@@ -211,10 +205,10 @@
             
 
 <div class="absolute opacity-[0.30] animate-watermark w-full h-full flex justify-center items-center" 
-                 style="animation-duration: 4s; animation-delay: 0s;">
+                 style="animation-duration: 20s; animation-delay: 0s;">
                 
 
-<img src="https://i.ibb.co/Y4ZJqt7C/5855174764425579513.jpg" alt="Dema Hope Watermark" class="w-full h-full object-contain">
+<img src="https://i.ibb.co/FLxSS6jt/5855174764425579514-1-removebg-preview.png" alt="Dema Hope Watermark" class="w-full h-full object-contain">
             </div>
         </div>
 
@@ -240,7 +234,7 @@
 
 <img 
                         id="profilePicture" 
-                        src="https://i.ibb.co/spL6BjST/5855174764425579514.jpg" 
+                        src="https://i.ibb.co/KxdB41Yw/590330395-122245334552174394-7170724954983779927-n.jpg" 
                         alt="Dema Hope Profile Picture" 
                         class="w-full h-full rounded-full object-cover"
                         onerror="this.onerror=null; this.src='https://placehold.co/160x160/3b82f6/ffffff?text=ID';"
