@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dema Hope - Chief Executive Officer | Digital Business Card</title>
+    
+    
+
+<meta property="og:title" content="Dema Hope - Digital Business Card" />
+    <meta property="og:description" content="Digital Business Card for Chief Executive Officer of Dema Hope Real Estate. Elevate your life style ቅንጦት ይገባዎታል." />
+    <meta property="og:image" content="https://i.ibb.co/TMPW18jq/5855174764425579512.png" /> 
+    <meta property="og:url" content="YOUR_NETLIFY_URL_HERE" /> 
+    <meta property="og:type" content="website" />
+
+    
+
+<script src="https://cdn.tailwindcss.com"></script>
+    
+
+<script src="https://unpkg.com/lucide@latest"></script>
+    
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <style>
+        /* Custom styles to ensure the page background looks nice */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style the primary link buttons */
+        .contact-btn {
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        }
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- DECORATIVE STYLING: SOLID HEADER (WITH THICK BORDER) --- */
+        .wave-background {
+            /* Background set to white as requested */
+            background-color: #ffffff; 
+            
+            animation: none; 
+            background-size: 100% 100%;
+
+            position: relative; 
+            overflow: hidden; 
+            z-index: 1; 
+            /* UPDATED TO BLUE BORDER */
+            border-bottom: 5px solid #3b82f6; 
+        }
+
+        /* --- UPDATED STYLING: Solid White Background (Main Container) --- */
+        .graph-pattern-background {
+            background-color: #ffffff; 
+            background-image: none; 
+        }
+
+        /* Styles for the decorative black strips */
+        .strip-decoration {
+            position: absolute;
+            width: 450px; 
+            height: 10px; 
+            background-color: #1f2937; /* Black/Dark Gray */
+            transform: rotate(-45deg); 
+            opacity: 1; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        /* Positioning for upper-right strips */
+        .strip-ur-1 { top: -100px; right: -150px; z-index: 0; } 
+        .strip-ur-2 { top: -60px; right: -110px; z-index: 0; } 
+        .strip-ur-3 { top: -20px; right: -70px; z-index: 0; } 
+
+        /* Positioning for lower-left strips */
+        .strip-ll-1 { bottom: -100px; left: -150px; z-index: 5; } 
+        .strip-ll-2 { bottom: -60px; left: -110px; z-index: 5; } 
+        .strip-ll-3 { bottom: -20px; left: -70px; z-index: 5; }
+
+        /* Custom Brand Colors for Social Media Icons */
+        .icon-facebook { background-color: #1877F2; color: white; }
+        .icon-linkedin { background-color: #0A66C2; color: white; }
+        .icon-telegram { background-color: #26A5E4; color: white; }
+        
+        /* WhatsApp color is now Black */
+        .icon-whatsapp { background-color: #000000; color: white; } 
+        
+        .icon-tiktok { background-color: #000000; color: white; } 
+        .icon-youtube { background-color: #FF0000; color: white; } 
+        
+        /* Instagram Brand Pink/Purple Gradient for the icon */
+        .icon-instagram { 
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #405ded 90%);
+            color: white; 
+        } 
+
+        /* Override hover colors for brand icons */
+        .icon-facebook:hover { background-color: #166EDF; }
+        .icon-linkedin:hover { background-color: #004D99; }
+        .icon-telegram:hover { background-color: #1B88B9; }
+        
+        /* WhatsApp hover color */
+        .icon-whatsapp:hover { background-color: #333333; } 
+        
+        .icon-instagram:hover { 
+            background: radial-gradient(circle at 30% 107%, #ffe082 0%, #ffe082 5%, #ff4d3d 45%, #c01e8c 60%, #3a4ee0 90%);
+        }
+        .icon-tiktok:hover { background-color: #333333; }
+        .icon-youtube:hover { background-color: #CC0000; }
+
+        /* --- WATERMARK ANIMATION: Subtle Pulse/Vibration --- */
+        @keyframes pulseSubtle {
+            0%, 100% {
+                /* Start and end: Centered with base scale (160%) */
+                transform: scale(1.6) translate(0, 0); 
+            }
+            50% {
+                /* Mid-point: Subtle increase in size and slight shift to create 'vibration' */
+                transform: scale(1.65) translate(0.5px, 0.5px); 
+            }
+        }
+        .animate-watermark {
+            /* Set common animation properties */
+            animation-name: pulseSubtle; 
+            animation-timing-function: ease-in-out; 
+            animation-iteration-count: infinite; 
+        }
+
+        /* * --- FINAL STYLES FOR IMAGE CAPTURE --- */
+        .is-capturing * {
+            transition: none !important;
+            animation: none !important;
+        }
+        
+        #id-card-content.is-capturing {
+            transform: none !important; 
+            position: relative !important; 
+        }
+        
+        .is-capturing .wave-background,
+        .is-capturing .strip-decoration {
+            position: absolute !important;
+            transform: none !important;
+        }
+
+        /* --- CRITICAL FIX: ENSURE PROFILE PICTURE STAYS ON TOP --- */
+        .profile-container {
+            z-index: 20; 
+            position: relative; 
+        }
+        
+        /* --- PROFILE PICTURE ZOOM & POSITION --- */
+        #profilePicture {
+            transform: scale(1.05); 
+            transition: transform 0.3s ease-in-out; 
+            object-position: 50% 50%; 
+        }
+
+        .is-capturing .fa-brands,
+        .is-capturing .fa-solid {
+            display: inline-block !important;
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 py-8 bg-gray-900">
+
+    
+
+<div id="messageBox" class="fixed top-4 left-1/2 -translate-x-1/2 p-3 bg-gray-100 text-gray-700 rounded-lg text-sm text-center hidden z-50 transition-all duration-300 shadow-xl">
+        Action completed.
+    </div>
+
+    
+
+<div id="id-card-content" 
+          class="graph-pattern-background max-w-sm w-full mx-auto p-4 md:p-6 rounded-3xl 
+                 border-2 border-gray-200 
+                 shadow-[0_15px_30px_-5px_rgba(0,0,0,0.7)] 
+                 transform transition-transform duration-500 hover:scale-[1.01] 
+                 relative overflow-hidden">
+        
+        
+
+<div class="wave-background absolute top-0 left-0 right-0 h-64 -mt-2 -mx-1 rounded-t-[1.5rem]">
+            
+
+<div class="absolute top-0 left-0 w-full h-full flex justify-center items-center" style="top: -10%;">
+                
+
+<img id="businessLogo" 
+                    src="https://i.ibb.co/TMPW18jq/5855174764425579512.png" 
+                    alt="Dema Hope Real Estate Logo" 
+                    class="w-[90%] h-[90%] object-contain transition-opacity duration-300"
+                    onerror="this.onerror=null; this.src='https://placehold.co/160x80/1f2937/ffffff?text=LOGO';"
+                >
+            </div>
+        </div>
+
+        
+
+<div class="absolute inset-0 z-40 pointer-events-none flex justify-center items-center" style="top: -5%;">
+            
+
+<div class="absolute opacity-[0.30] animate-watermark w-full h-full flex justify-center items-center" 
+                 style="animation-duration: 4s; animation-delay: 0s;">
+                
+
+<img src="https://i.ibb.co/Y4ZJqt7C/5855174764425579513.jpg" alt="Dema Hope Watermark" class="w-full h-full object-contain">
+            </div>
+        </div>
+
+        
+
+<div class="strip-decoration strip-ur-1"></div>
+        <div class="strip-decoration strip-ur-2"></div>
+        <div class="strip-decoration strip-ur-3"></div>
+        <div class="strip-decoration strip-ll-1"></div>
+        <div class="strip-decoration strip-ll-2"></div>
+        <div class="strip-decoration strip-ll-3"></div>
+
+        
+
+<div class="relative z-10"> 
+            
+
+<div class="text-center mb-6 pt-36"> 
+                
+
+<div class="relative w-40 h-40 mx-auto rounded-full border-8 border-black/60 shadow-xl overflow-hidden profile-container">
+                    
+
+<img 
+                        id="profilePicture" 
+                        src="https://i.ibb.co/spL6BjST/5855174764425579514.jpg" 
+                        alt="Dema Hope Profile Picture" 
+                        class="w-full h-full rounded-full object-cover"
+                        onerror="this.onerror=null; this.src='https://placehold.co/160x160/3b82f6/ffffff?text=ID';"
+                    >
+                </div>
+                
+                
+
+<h1 id="contactName" class="text-xl font-extrabold text-gray-900 mt-4">Dema Hope</h1>
+                
+
+<p id="contactOrg" class="text-xl font-semibold text-blue-600 mt-1">Dema Hope real estate</p>
+                
+
+<p id="contactTitle" class="text-lg font-bold text-gray-900 mt-2">Chief Executive Officer</p>
+                
+
+<p class="text-base italic text-gray-900 mt-1">"Elevate your life style ቅንጦት ይገባዎታል"</p>
+            </div>
+
+            
+
+<div class="space-y-3 mt-8">
+                <h2 class="text-lg font-bold text-gray-700 mb-2 border-b pb-2">Primary Contact</h2>
+                
+                
+
+<a href="tel:+251951515174" id="contactPhoneLink" class="contact-btn flex items-center justify-center p-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
+                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                    Call: 0951515174
+                </a>
+                
+                
+
+<a href="https://wa.me/251951515111" target="_blank" id="contactWhatsappLink" class="contact-btn flex items-center justify-center p-3 font-semibold rounded-lg shadow-lg icon-whatsapp">
+                    <i class="fa-brands fa-whatsapp text-2xl mr-2"></i>
+                    WhatsApp: 0951515111
+                </a>
+
+                
+                
+
+<a href="sms:+251951515174" class="contact-btn flex items-center justify-center p-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800">
+                    <i data-lucide="message-square-text" class="w-5 h-5 mr-2"></i>
+                    Send SMS
+                </a>
+            </div>
+            
+            
+
+<div class="mt-6 border-t pt-6 border-gray-200">
+                <h2 class="text-lg font-bold text-gray-700 mb-3">Links & Social Media</h2>
+                
+                
+
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                    
+
+<a href="https://demahoperealestate.com/" target="_blank" class="contact-btn flex items-center justify-center p-3 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300">
+                        <i data-lucide="globe" class="w-5 h-5 mr-2"></i>
+                        Website
+                    </a>
+                    
+
+<a href="https://maps.app.goo.gl/66vQJ5azkoYCMTHJA" target="_blank" class="contact-btn flex items-center justify-center p-3 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300">
+                        <i data-lucide="map-pin" class="w-5 h-5 mr-2"></i>
+                        Location
+                    </a>
+                    
+
+<a href="https://share.google/UHPioNJukeWkHtDaS" target="_blank" class="contact-btn flex items-center justify-center p-3 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300">
+                        <i data-lucide="building-2" class="w-5 h-5 mr-2"></i>
+                        Properties
+                    </a>
+                </div>
+
+                
+
+<div class="flex flex-wrap justify-center gap-4"> 
+                    
+
+<a href="https://et.linkedin.com/company/demahoperealestate" target="_blank" id="social-linkedin" class="inline-flex items-center justify-center w-12 h-12 rounded-full transition duration-300 transform hover:scale-110 shadow-lg icon-linkedin" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin text-4xl"></i>
+                    </a>
+                    
+                    
+
+<a href="https://www.instagram.com/demahoperealestate?igsh=MTF1cmZwYWdhemJwdg==" target="_blank" id="social-instagram" class="inline-flex items-center justify-center w-12 h-12 rounded-full transition duration-300 transform hover:scale-110 shadow-lg icon-instagram" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram text-4xl"></i>
+                    </a>
+                    
+
+<a href="https://www.facebook.com/demahoperealestatee" target="_blank" id="social-facebook" class="inline-flex items-center justify-center w-12 h-12 rounded-full transition duration-300 transform hover:scale-110 shadow-lg icon-facebook" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook text-4xl"></i>
+                    </a>
+                    
+
+<a href="https://vm.tiktok.com/ZMHTSWFmNKxNR-PNDd6/" target="_blank" id="social-tiktok" class="inline-flex items-center justify-center w-12 h-12 rounded-full transition duration-300 transform hover:scale-110 shadow-lg icon-tiktok" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok text-4xl"></i>
+                    </a>
+                    
+
+<a href="" target="_blank" id="social-telegram" class="inline-flex items-center justify-center w-12 h-12 rounded-full transition duration-300 transform hover:scale-110 shadow-lg icon-telegram" aria-label="Telegram">
+                        <i class="fa-brands fa-telegram text-4xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            
+
+<div class="mt-8 space-y-3">
+                
+
+<button 
+                    id="downloadButton"
+                    class="w-full flex items-center justify-center p-4 bg-blue-600 text-white font-bold rounded-xl shadow-xl hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                >
+                    <i data-lucide="download" class="w-6 h-6 mr-2"></i>
+                    Download Card Image
+                </button>
+
+                
+
+<button 
+                    id="vcfButton"
+                    class="w-full flex items-center justify-center p-4 bg-black text-white font-bold rounded-xl shadow-xl hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-4 focus:ring-gray-500"
+                >
+                    <i data-lucide="address-book" class="w-6 h-6 mr-2"></i>
+                    Add to Contact (.vcf)
+                </button>
+            </div>
+        </div> 
+    </div>
+
+    <script>
+        // Ensure Lucide icons are initialized once the script loads
+        lucide.createIcons();
+
+        const messageBox = document.getElementById('messageBox');
+        
+        // --- Utility Functions for Messaging (Unchanged) ---
+        function showMessage(text, isError = false) {
+            messageBox.textContent = text;
+            messageBox.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-gray-100', 'text-gray-700', 'bg-green-100', 'text-green-700');
+            
+            if (isError) {
+                messageBox.classList.add('bg-red-100', 'text-red-700');
+            } else {
+                messageBox.classList.add('bg-green-100', 'text-green-700'); 
+            }
+            
+            messageBox.classList.remove('hidden');
+            
+            setTimeout(() => {
+                messageBox.classList.add('hidden');
+            }, 4000);
+        }
+
+
+        // --- Download Card Image Functionality (Stable Capture) ---
+        document.getElementById('downloadButton').addEventListener('click', () => {
+            const cardElement = document.getElementById('id-card-content');
+            const downloadButton = document.getElementById('downloadButton'); 
+            
+            showMessage('Generating high-resolution image...', false); 
+
+            // 1. Temporarily hide the button
+            downloadButton.style.display = 'none';
+            
+            // 2. Add capturing class to disable all animations/transitions and apply fixed positions
+            cardElement.classList.add('is-capturing');
+
+            // 3. Set a small timeout to ensure the CSS class is fully applied before capture
+            setTimeout(() => {
+                html2canvas(cardElement, {
+                    scale: 3, 
+                    useCORS: true, 
+                    allowTaint: false 
+                }).then(canvas => {
+                    // 4. Cleanup: Restore button and hover effects
+                    downloadButton.style.display = 'flex'; 
+                    cardElement.classList.remove('is-capturing');
+
+                    const image = canvas.toDataURL('image/png');
+                    const link = document.createElement('a');
+                    link.href = image;
+                    link.download = 'Digital_ID_Card_Dema_Hope.png';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    showMessage('Card downloaded successfully!');
+                }).catch(error => {
+                    // 5. Cleanup on error: Restore button and hover effects
+                    downloadButton.style.display = 'flex'; 
+                    cardElement.classList.remove('is-capturing');
+
+                    console.error('Error generating image:', error);
+                    showMessage('Failed to generate card image. Ensure images are either uploaded or simple image URLs.', true);
+                });
+            }, 100); 
+        });
+
+
+        // --- VCF Contact Generation Functionality (FINAL DATA) ---
+        const CONTACT_DATA = {
+            name: "Dema Hope",
+            organization: "Dema Hope real estate", 
+            title: "Chief Executive Officer",
+            phone: "+251951515174",
+            internationalPhone: "+251951515174",
+            whatsappPhone: "+251951515111", // Second number for WhatsApp
+            email: "", 
+            website: "https://demahoperealestate.com/",
+            propertiesLink: "https://share.google/UHPioNJukeWkHtDaS",
+            locationLink: "https://maps.app.goo.gl/66vQJ5azkoYCMTHJA",
+            socialLinks: [
+                { type: "LinkedIn", url: "https://et.linkedin.com/company/demahoperealestate" },
+                // { type: "YouTube", url: "https://youtube.com/@demahoperealestate?si=vsCbBi52RZaNCJXu" }, 
+                { type: "Instagram", url: "https://www.instagram.com/demahoperealestate?igsh=MTF1cmZwYWdhemJwdg==" },
+                { type: "Facebook", url: "https://www.facebook.com/demahoperealestatee" },
+                { type: "Tiktok", url: "https://vm.tiktok.com/ZMHTSWFmNKxNR-PNDd6/" },
+            ]
+        };
+
+        function generateVCard() {
+            let vcf = "BEGIN:VCARD\r\n";
+            vcf += "VERSION:3.0\r\n";
+            vcf += `FN:${CONTACT_DATA.name}\r\n`;
+            vcf += `N:Hope;Dema;;;\r\n`; 
+            vcf += `ORG:${CONTACT_DATA.organization}\r\n`;
+            vcf += `TITLE:${CONTACT_DATA.title}\r\n`;
+            
+            // Primary phone number
+            vcf += `TEL;TYPE=WORK,VOICE,CELL:${CONTACT_DATA.internationalPhone}\r\n`;
+            // Secondary (WhatsApp) number
+            vcf += `TEL;TYPE=CELL,OTHER:${CONTACT_DATA.whatsappPhone}\r\n`;
+            
+            if (CONTACT_DATA.email) {
+                vcf += `EMAIL;TYPE=INTERNET,PREF:${CONTACT_DATA.email}\r\n`;
+            }
+
+            // URL fields
+            vcf += `URL;TYPE=Website:${CONTACT_DATA.website}\r\n`;
+            
+            let noteContent = `Slogan: Elevate your life style ቅንጦት ይገባዎታል\n`;
+            noteContent += `WhatsApp (Secondary): ${CONTACT_DATA.whatsappPhone}\n`;
+            noteContent += `Properties Link: ${CONTACT_DATA.propertiesLink}\n`;
+            noteContent += `Location Link: ${CONTACT_DATA.locationLink}\n`;
+            noteContent += "\nSocial Media Links:\n";
+            
+            CONTACT_DATA.socialLinks.forEach(link => {
+                noteContent += `${link.type}: ${link.url}\n`;
+                if (link.type === 'LinkedIn') {
+                    vcf += `X-SOCIALPROFILE;TYPE=linkedin:${link.url}\r\n`;
+                }
+            });
+            
+            const escapedNote = noteContent.replace(/\n/g, '\\n').replace(/,/g, '\\,');
+            vcf += `NOTE:${escapedNote}\r\n`;
+
+            vcf += "END:VCARD\r\n";
+            
+            return vcf;
+        }
+
+        document.getElementById('vcfButton').addEventListener('click', () => {
+            const vcfData = generateVCard();
+            
+            const blob = new Blob([vcfData], { type: 'text/vcard;charset=utf-8' });
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `${CONTACT_DATA.name.replace(/ /g, '_')}_Contact.vcf`;
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            showMessage('Contact card (.vcf) generated and downloaded!');
+        });
+    </script>
+</body>
+</html>
